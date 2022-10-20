@@ -43,6 +43,7 @@ async function main() {
 
     await simpleStorage.deployed()
     console.log(`Deployed contract to address: ${simpleStorage.address}`)
+    
     // verify contract on etherscan
     if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
         console.log("Waiting for block confirmations...")
