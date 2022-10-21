@@ -1,5 +1,5 @@
 const { ethers } = require("hardhat")
-const { expect, assert } = require("chai")
+const { expect } = require("chai")
 
 // npx hardhat test --grep keyword, only runs tests which contain keyword in its description
 // it.only also isolates test suite to that function
@@ -25,5 +25,13 @@ describe("SimpleStorage", function () {
 
         // assert.equal(currentValue.toString(), expectedValue)
         expect(currentValue).to.equal(expectedValue)
+    })
+    it("Should respond with users favorite number", async function () {
+        const testUser = "Lulu"
+        const expectedValue = 99
+        await simpleStorage.addUser(testUser, expectedValue)
+
+        const updatedValue = await simpleStorage.nameToFavoriteNumber(testUser)
+        expect(updatedValue).to.equal(expectedValue)
     })
 })

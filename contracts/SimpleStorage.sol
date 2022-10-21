@@ -15,13 +15,13 @@ contract SimpleStorage {
 
     struct User {
         string name;
-        uint256 phoneNum;
+        uint256 favoriteNumber;
     }
 
     User[] public usersList;
 
-    function addUser(string memory _name, uint256 _phoneNum) public {
-        usersList.push(User(_name, _phoneNum));
-        nameToFavoriteNumber[_name] = _phoneNum;
+    function addUser(string memory _name, uint256 _favoriteNumber) public {
+        usersList.push(User(_name, _favoriteNumber));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
