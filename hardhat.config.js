@@ -19,9 +19,10 @@ module.exports = {
             chainId: 5,
         },
         localhost: {
-          url: "http://127.0.0.1:8545/",
-          // accounts: created by hardhat
-          chainId: 31337
+            // deploy here to interact with JSON-RPC server initialized with 'npx hardhat node'
+            url: "http://127.0.0.1:8545/",
+            // accounts: created by hardhat
+            chainId: 31337,
         },
     },
     etherscan: {
