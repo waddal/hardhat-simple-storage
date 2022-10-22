@@ -1,9 +1,11 @@
-require("@nomicfoundation/hardhat-toolbox")
-require("dotenv").config()
-require("@nomiclabs/hardhat-etherscan")
-require("hardhat-gas-reporter")
-require("./tasks/accounts")
-require("./tasks/block-number")
+import "@nomicfoundation/hardhat-toolbox"
+import "dotenv/config"
+import "@nomiclabs/hardhat-etherscan"
+import "hardhat-gas-reporter"
+import "./tasks/accounts"
+import "./tasks/block-number"
+// import "@nomiclabs/hardhat-ethers" not required
+import "@typechain/hardhat" // new task: typechain
 
 const ALCHEMY_API_KEY =
     process.env.ALCHEMY_API_KEY || "https://eth-goerli/example"
