@@ -1,12 +1,16 @@
-const { ethers } = require("hardhat")
-const { expect } = require("chai")
+import { ethers } from "hardhat"
+import { expect } from "chai"
+import { SimpleStorage, SimpleStorage__factory } from "../typechain-types"
 
 // npx hardhat test --grep keyword, only runs tests which contain keyword in its description
 // it.only also isolates test suite to that function
 describe("SimpleStorage", function () {
-    let SimpleStorageFactory, simpleStorage
+    let SimpleStorageFactory: SimpleStorage__factory
+    let simpleStorage: SimpleStorage
     beforeEach(async function () {
-        SimpleStorageFactory = await ethers.getContractFactory("SimpleStorage")
+        SimpleStorageFactory = (await ethers.getContractFactory(
+            "SimpleStorage"
+        )) as SimpleStorage__factory
         simpleStorage = await SimpleStorageFactory.deploy()
     })
 
