@@ -1,7 +1,7 @@
 import "@nomicfoundation/hardhat-toolbox"
 import "dotenv/config"
-import "@nomiclabs/hardhat-etherscan"
-import "hardhat-gas-reporter"
+// import "@nomiclabs/hardhat-etherscan"
+// import "hardhat-gas-reporter"
 import "./tasks/accounts"
 import "./tasks/block-number"
 // import "@nomiclabs/hardhat-ethers" not required
@@ -34,11 +34,11 @@ module.exports = {
         apiKey: ETHERSCAN_API_KEY,
     },
     gasReporter: {
-        enabled: false,
+        enabled: true,
         outputFile: "gas-report.txt",
         noColors: true,
         // uncomment to access coinmarketcap api on call
-        // currency: "USD",
-        // coinmarketcap: COINMARKETCAP_API_KEY,
+        currency: "USD",
+        coinmarketcap: COINMARKETCAP_API_KEY,
     },
 }
